@@ -1,4 +1,4 @@
-require '../colour'
+require_relative '../colour'
 
 module OS161
   module Commands

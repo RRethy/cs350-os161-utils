@@ -1,5 +1,5 @@
 #! /usr/bin/ruby
 
-require './lib/os161.rb'
+require_relative '../lib/os161.rb'
 
 OS161::parse(ARGV)

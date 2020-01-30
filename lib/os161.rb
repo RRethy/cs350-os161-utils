@@ -1,5 +1,5 @@
 require 'getoptlong'
-require './os161/commands/help'
+require_relative './os161/commands/help'
 
 module OS161
   class CLI
