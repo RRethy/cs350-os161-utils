@@ -6,6 +6,7 @@ module OS161
       def assert_dir_exists(dir)
         unless File.directory?(File.expand_path(dir))
           puts Colour::red("Directory does not exist: #{dir}")
+          exit(1)
         end
       end
     end
