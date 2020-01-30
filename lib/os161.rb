@@ -10,12 +10,12 @@ module OS161
 
       private
 
-      def parse_opts
+      def parse_opts(argv)
         opts = GetoptLong.new(
           [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
           [ '--build', '-b', GetoptLong::REQUIRED_ARGUMENT ]
         )
-        if ARGV.length == 0
+        if argv.length == 0
           Commands::Help.call
           exit 2
         end
