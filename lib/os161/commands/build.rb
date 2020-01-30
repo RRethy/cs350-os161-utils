@@ -10,7 +10,7 @@ module OS161
           Dir.chdir("~/cs350-os161/os161-1.99/kern/conf") do
             # TODO ensure this dir exists
             exe("./config ASST#{version}")
-            Dir.chdir("cd ../compile/ASST#{version}") do
+            Dir.chdir("cd ~/cs350-os161/os161-1.99/kern/compile/ASST#{version}") do
               [
                 "bmake depend",
                 "bmake",
