@@ -25,7 +25,7 @@ module OS161
           when '--help'
             Commands::Help.call
           when '--build'
-            Commands::Build.call
+            Commands::Build.call(arg)
           else
             Commands::Help.call
           end
