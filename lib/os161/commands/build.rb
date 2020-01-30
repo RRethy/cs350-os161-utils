@@ -6,7 +6,7 @@ module OS161
     class Build
       class << self
         def call(version)
-          puts "Building the kernel with version #{version}"
+          puts "Building kernel-ASST#{version}"
           kern_dir = File.expand_path("~/cs350-os161/os161-1.99/kern")
           Utils::assert_dir_exists(kern_dir)
           conf_dir = "#{kern_dir}/conf"
