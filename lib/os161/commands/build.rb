@@ -16,13 +16,7 @@ module OS161
             compile_dir = "#{kern_dir}/compile/ASST#{version}"
             Utils::assert_dir_exists(compile_dir)
             Dir.chdir(compile_dir) do
-              [
-                "bmake depend",
-                "bmake",
-                "bmake install"
-              ].each do |cmd|
-                exe(cmd)
-              end
+              ["bmake depend", "bmake", "bmake install"].each { |cmd| exe(cmd) }
             end
           end
         end
