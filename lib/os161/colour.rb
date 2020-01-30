@@ -2,19 +2,26 @@ module OS161
   class Colour
     class << self
       def blue(str)
-        return "\e[34m#{str}#{reset}"
+        with_colour("\e[34m", str)
       end
 
       def green(str)
-        return "\e[32m#{str}#{reset}"
-        return "`tput setaf 2`#{str}#{reset}"
+        with_colour("\e[32m", str)
       end
 
       def red(str)
-        return "\e[31m#{str}#{reset}"
+        with_colour("\e[31m", str)
       end
 
       private
+
+      def with_colour(escape_seq, str)
+        if STDOUT.isatty
+          "#{escape_seq}#{str}#{reset}"
+        else
+          str
+        end
+      end
 
       def reset
         return "\e[37m"
