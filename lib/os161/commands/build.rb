@@ -1,4 +1,5 @@
 require_relative '../colour'
+require_relative '../utils'
 
 module OS161
   module Commands
@@ -6,11 +7,15 @@ module OS161
       class << self
         def call(version)
           puts "Building the kernel with version #{version}"
-          # TODO ensure this dir exists
-          Dir.chdir(File.expand_path("~/cs350-os161/os161-1.99/kern/conf")) do
-            # TODO ensure this dir exists
+          kern_dir = File.expand_path("~/cs350-os161/os161-1.99/kern")
+          Utils::assert_dir_exists(kern_dir)
+          conf_dir = "#{kern_dir}/conf"
+          Utils::assert_dir_exists(conf_dir)
+          Dir.chdir(conf_dir) do
             exe("./config ASST#{version}")
-            Dir.chdir(File.expand_path("~/cs350-os161/os161-1.99/kern/compile/ASST#{version}")) do
+            compile_dir = "#{kern_dir}/compile/ASST#{version}"
+            Utils::assert_dir_exists(compile_dir)
+            Dir.chdir(compile_dir) do
               [
                 "bmake depend",
                 "bmake",
