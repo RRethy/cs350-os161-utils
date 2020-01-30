@@ -1,6 +1,7 @@
 require 'getoptlong'
 require_relative './os161/commands/help'
 require_relative './os161/commands/build'
+require_relative './os161/commands/run'
 
 module OS161
   class CLI
@@ -14,7 +15,8 @@ module OS161
       def parse_opts(argv)
         opts = GetoptLong.new(
           [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
-          [ '--build', '-b', GetoptLong::REQUIRED_ARGUMENT ]
+          [ '--build', '-b', GetoptLong::REQUIRED_ARGUMENT ],
+          [ '--run', '-r', GetoptLong::REQUIRED_ARGUMENT ]
         )
         if argv.length == 0
           Commands::Help.call
@@ -27,6 +29,8 @@ module OS161
             Commands::Help.call
           when '--build'
             Commands::Build.call(arg)
+          when '--run'
+            Commands::Run.call(arg)
           else
             Commands::Help.call
           end

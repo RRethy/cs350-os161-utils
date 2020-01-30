@@ -13,6 +13,7 @@ OPTIONS:
 --help, -h:
     show help
 --build version, -b version:
+--run version, -r version:
           EOF
         end
       end
