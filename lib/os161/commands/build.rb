@@ -30,7 +30,7 @@ module OS161
           else
             puts "Failed during #{Colour::red(cmd)}"
             puts Colour::red("="*80)
-            puts output.msg
+            puts output
             puts Colour::red("="*80)
             exit(1)
           end
