@@ -40,7 +40,7 @@ module OS161
         end
 
         def find_bmake_build_number(str)
-          puts Colour::blue(str)
+          puts Colour::blue(str.match(/\*\*\* This is ASST1 build #([1-9]+) \*\*\*/).captures.to_s)
         end
       end
     end
