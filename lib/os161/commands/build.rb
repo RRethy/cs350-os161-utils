@@ -16,7 +16,9 @@ module OS161
             compile_dir = "#{kern_dir}/compile/ASST#{version}"
             Utils::assert_dir_exists(compile_dir)
             Dir.chdir(compile_dir) do
-              ["bmake depend", "bmake", "bmake install"].each { |cmd| exe(cmd) }
+              exe("bmake depend")
+              find_bmake_build_number(exe("bmake"))
+              exe("bmake install")
             end
           end
         end
@@ -27,6 +29,7 @@ module OS161
           output = `#{cmd} 2>&1`
           if $?.exitstatus == 0
             puts "Successfully did #{Colour::green(cmd)}"
+            return output
           else
             puts "Failed during #{Colour::red(cmd)}"
             puts Colour::red("="*80)
@@ -34,6 +37,10 @@ module OS161
             puts Colour::red("="*80)
             exit(1)
           end
+        end
+
+        def find_bmake_build_number(str)
+          puts Colour::blue(str)
         end
       end
     end
