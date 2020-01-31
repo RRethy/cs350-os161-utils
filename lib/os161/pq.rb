@@ -37,7 +37,7 @@ module OS161
     end
 
     def empty?
-      @arr.empty
+      @arr.empty?
     end
 
     private
