@@ -1,4 +1,5 @@
 require 'date'
+require 'singleton'
 require_relative './colour'
 
 module OS161
