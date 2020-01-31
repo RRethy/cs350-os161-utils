@@ -10,7 +10,7 @@ os161 is a utility command to help with the development of os161 in CS350 at
 UWaterloo.
 
 os161 will execute all your commands without fucking up your current working
-directory, you also won't have to cd everywhere because that sucks shit.
+directory, you also won't have to cd everywhere because that shit sucks.
 
 Options can be combined and ordering will not get wack; building will always be
 done before running anything. For example, `--run --build` will build the
