@@ -10,7 +10,7 @@ Run `os161 --help` for help.
 
 [x] Add `--build` option
 
-[] Add `--run` option
+[x] Add `--run` option
 
 [] Add `--debug` option to debug over an ssh tunnel (may need to create a wrapper around gdb-350 for compatibility with new-ui command)
 
