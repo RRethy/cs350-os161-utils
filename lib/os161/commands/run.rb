@@ -1,11 +1,13 @@
 require_relative '../colour'
 require_relative '../utils'
+require_relative '../options'
 
 module OS161
   module Commands
     class Run
       class << self
-        def call(version)
+        def call
+          version = Options.assn_nr
           if version.nil?
             kernel = "kernel"
           else

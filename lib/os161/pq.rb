@@ -8,30 +8,8 @@ module OS161
       end
     end
 
-    attr_reader :arr
-
     def initialize
       @arr = []
-1
-2
-4
-7
-3
-6
-5
-8
-1
-24
-7365
-8
-      push("6", 6)
-      push("7", 7)
-      push("2", 2)
-      push("3", 3)
-      push("1", 1)
-      push("5", 5)
-      push("4", 4)
-      push("8", 8)
     end
 
     def push(val, priority)

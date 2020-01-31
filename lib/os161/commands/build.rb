@@ -1,11 +1,13 @@
 require_relative '../colour'
 require_relative '../utils'
+require_relative '../options'
 
 module OS161
   module Commands
     class Build
       class << self
-        def call(version)
+        def call
+          version = Options.instance.assn_nr
           puts Colour::blue("Building kernel-ASST#{version}")
           kern_dir = File.expand_path("~/cs350-os161/os161-1.99/kern")
           conf_dir = "#{kern_dir}/conf"
