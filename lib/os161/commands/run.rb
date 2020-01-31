@@ -20,7 +20,7 @@ module OS161
             if cmd.nil?
               Utils::begin_interative("sys161 #{kernel}")
             else
-              Utils::try_execute("sys161 #{kernel} \"#{cmd}:q\"")
+              Utils::try_execute("sys161 #{kernel} \"#{cmd};q\"")
             end
           end
         end
