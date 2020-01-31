@@ -3,6 +3,8 @@ require_relative './colour'
 
 module OS161
   class Options
+    include Singleton
+
     attr_accessor :assn_nr
 
     def set_defaults
