@@ -19,7 +19,7 @@ module OS161
         opts = GetoptLong.new(
           [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
           [ '--build', '-b', GetoptLong::NO_ARGUMENT ],
-          [ '--run', '-r', GetoptLong::NO_ARGUMENT ],
+          [ '--run', '-r', GetoptLong::OPTIONAL_ARGUMENT ],
           [ '--assignment_number', '-n', GetoptLong::REQUIRED_ARGUMENT ]
         )
         if argv.length == 0
@@ -35,6 +35,7 @@ module OS161
             pq.push(Commands::Build, 1)
           when '--run'
             pq.push(Commands::Run, 2)
+            options.cmd = arg
           when '--assignment_number'
             options.assn_nr = arg
           end

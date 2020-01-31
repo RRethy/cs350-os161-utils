@@ -7,6 +7,7 @@ module OS161
     include Singleton
 
     attr_accessor :assn_nr
+    attr_accessor :cmd
 
     def set_defaults
       @assn_nr ||= assn_nr_heuristic

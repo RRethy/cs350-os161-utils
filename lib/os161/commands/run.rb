@@ -8,6 +8,7 @@ module OS161
       class << self
         def call
           version = Options.instance.assn_nr
+          cmd = Options.instance.cmd
           if version.nil?
             kernel = "kernel"
           else
@@ -16,7 +17,11 @@ module OS161
           puts Colour::blue("Starting 'sys161' with kernel #{kernel}")
           root_dir = File.expand_path("~/cs350-os161/root")
           Utils::chdir(root_dir) do
-            Utils::begin_interative("sys161 #{kernel}")
+            if cmd.nil?
+              Utils::begin_interative("sys161 #{kernel}")
+            else
+              Utils::try_execute("sys161 #{kernel} \"#{cmd}:q\"")
+            end
           end
         end
       end

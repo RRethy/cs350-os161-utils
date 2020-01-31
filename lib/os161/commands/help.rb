@@ -9,7 +9,7 @@ os161util [OPTION]
 os161util is a utility command to help with the development of os161 in CS350 at
 UWaterloo.
 
-Options can be combined and ordering with no get wack; building will always be
+Options can be combined and ordering will not get wack; building will always be
 done before running anything. For example, `--run --build` will build the
 kernel, then run the simulator.
 

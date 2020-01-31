@@ -10,6 +10,15 @@ module OS161
         end
       end
 
+      def try_execute(cmd)
+        system(cmd)
+        if $?.exitstatus == 0
+          puts "Successfully did #{Colour::green(cmd)}"
+        else
+          puts Colour::red("Failed doing {#{cmd}} with exit status of #{$?.exitstatus}")
+        end
+      end
+
       def must_execute(cmd)
         output = `#{cmd} 2>&1`
         if $?.exitstatus == 0
