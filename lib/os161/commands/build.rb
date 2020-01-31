@@ -23,8 +23,12 @@ module OS161
         private
 
         def print_bmake_build_number(bmake_output)
-          build_nr = bmake_output.match(/\*\*\* This is ASST1 build #([1-9]+) \*\*\*/).captures.first
-          puts Colour::blue("Build number: #{build_nr}")
+          match = bmake_output.match(/\*\*\* This is ASST1 build #([1-9]+) \*\*\*/)
+          if match.nil?
+            Utils::error("bmake - Looking for build version", bmake_output)
+          else
+            puts Colour::blue("Build number: #{match.captures.first}")
+          end
         end
       end
     end

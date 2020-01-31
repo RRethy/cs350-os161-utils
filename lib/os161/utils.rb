@@ -16,11 +16,7 @@ module OS161
           puts "Successfully did #{Colour::green(cmd)}"
           return output
         else
-          puts "Failed during #{Colour::red(cmd)}"
-          puts Colour::red("="*80)
-          puts output
-          puts Colour::red("="*80)
-          exit(1)
+          error(cmd, output)
         end
       end
 
@@ -39,6 +35,14 @@ module OS161
           puts Colour::red("Directory does not exist: #{dir}")
           exit(1)
         end
+      end
+
+      def error(cmd, output)
+        puts "Failed during #{Colour::red(cmd)}"
+        puts Colour::red("="*80)
+        puts output
+        puts Colour::red("="*80)
+        exit(1)
       end
     end
   end
