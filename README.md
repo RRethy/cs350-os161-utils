@@ -1,6 +1,6 @@
 # Usage
 
-Clone the repo and add the `cs350-os161-utils/bin/` directory to your path.
+Clone the repo onto the school server and add the `cs350-os161-utils/bin/` directory to your path (something like `export PATH="~/cs350-os161-utils/bin/":$PATH`).
 
 Read `os161 --help`.
 
