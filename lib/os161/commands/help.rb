@@ -32,6 +32,8 @@ OPTIONS:
     By default it'll use a heuristic based on hardcoded assignment deadlines
     for W20 to determine which version of the kernel to build. You can specify
     a specific kernel version with --assignment_number (-r).
+--test <cmd>, -t <cmd>:
+    TODO: implement
 EOF
         end
       end
