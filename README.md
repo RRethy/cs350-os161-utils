@@ -3,7 +3,7 @@
 Clone the repo and add the `cs350-os161-utils/bin/` directory to your path.
 
 ```
-os161util [OPTION]
+os161 [OPTION]
 
 os161 is a utility command to help with the development of os161 in CS350 at
 UWaterloo.

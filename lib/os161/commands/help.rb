@@ -4,7 +4,7 @@ module OS161
       class << self
         def call
           puts <<-EOF
-os161util [OPTION]
+os161 [OPTION]
 
 os161 is a utility command to help with the development of os161 in CS350 at
 UWaterloo.
