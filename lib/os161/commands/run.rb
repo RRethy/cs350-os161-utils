@@ -7,7 +7,7 @@ module OS161
     class Run
       class << self
         def call
-          version = Options.instance.assn_nr
+          version = Options.instance.kernel_version
           cmd = Options.instance.cmd
           if version.nil?
             kernel = "kernel"

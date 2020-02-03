@@ -27,7 +27,7 @@ OPTIONS:
     These would be pretty much the same:
     $ os161 -r "sp3 1 150 1 1 0"
     $ sys161 kernel "sp3 1 150 1 1 0;q"
---assignment_number integer, -r integer:
+--assignment_number [1(2a)(2b)3], -r [1(2a)(2b)3]:
     specifies which kernel version to build and use.
     By default it'll use a heuristic based on hardcoded assignment deadlines
     for W20 to determine which version of the kernel to build. You can specify

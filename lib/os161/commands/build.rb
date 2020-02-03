@@ -7,7 +7,7 @@ module OS161
     class Build
       class << self
         def call
-          version = Options.instance.assn_nr
+          version = Options.instance.kernel_version
           puts Colour::blue("Building kernel-ASST#{version}")
           kern_dir = File.expand_path("~/cs350-os161/os161-1.99/kern")
           conf_dir = "#{kern_dir}/conf"
