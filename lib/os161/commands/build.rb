@@ -25,7 +25,7 @@ module OS161
         private
 
         def print_bmake_build_number(bmake_output)
-          buildnr = bmake_output.match(/\*\*\* This is ASST1 build #([0-9]+) \*\*\*/).captures.first
+          buildnr = bmake_output.match(/\*\*\* This is ASST[0-9] build #([0-9]+) \*\*\*/).captures.first
           puts Colour::blue("Build number: #{buildnr}")
         end
       end
