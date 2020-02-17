@@ -20,7 +20,7 @@ module OS161
         opts = GetoptLong.new(
           [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
           [ '--build', '-b', GetoptLong::NO_ARGUMENT ],
-          [ '--build-user-programs', '-bup', GetoptLong::NO_ARGUMENT ],
+          [ '--build-user-programs', '-u', GetoptLong::NO_ARGUMENT ],
           [ '--run', '-r', GetoptLong::OPTIONAL_ARGUMENT ],
           [ '--assignment_number', '-n', GetoptLong::REQUIRED_ARGUMENT ]
         )
