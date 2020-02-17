@@ -2,6 +2,7 @@ require 'getoptlong'
 require_relative './os161/pq'
 require_relative './os161/commands/help'
 require_relative './os161/commands/build'
+require_relative './os161/commands/build_user_programs'
 require_relative './os161/commands/run'
 
 module OS161
@@ -19,6 +20,7 @@ module OS161
         opts = GetoptLong.new(
           [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
           [ '--build', '-b', GetoptLong::NO_ARGUMENT ],
+          [ '--build-user-programs', '-bup', GetoptLong::NO_ARGUMENT ],
           [ '--run', '-r', GetoptLong::OPTIONAL_ARGUMENT ],
           [ '--assignment_number', '-n', GetoptLong::REQUIRED_ARGUMENT ]
         )
@@ -34,8 +36,10 @@ module OS161
           when '--build'
             pq.push(Commands::Build, 1)
           when '--run'
-            pq.push(Commands::Run, 2)
+            pq.push(Commands::Run, 3)
             options.cmd = arg
+          when '--build-user-programs'
+            pq.push(Commands::BuildUserPrograms, 2)
           when '--assignment_number'
             options.assn_nr = arg
           end
