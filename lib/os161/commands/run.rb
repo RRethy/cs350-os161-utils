@@ -17,7 +17,7 @@ module OS161
           puts Colour::blue("Starting 'sys161' with kernel #{kernel}")
           root_dir = File.expand_path("~/cs350-os161/root")
           Utils::chdir(root_dir) do
-            if cmd.nil?
+            if cmd.nil? || cmd.empty?
               Utils::begin_interative("sys161 #{kernel}")
             else
               Utils::try_execute("sys161 #{kernel} \"#{cmd};q\"")
